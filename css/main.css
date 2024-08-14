@@ -11,54 +11,60 @@ body {
     background-color: black;
 }
 
-.topthird {
-    width: 1280px;
-    height: 720px;
-    margin: 0 auto;
+.topthird {    
     background-image: url(../img/topt.jpg);
     background-size: 100%;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.topthird h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100px;
-    font-weight: 100px;
-    color: wheat;
+.topthird img {
+    padding-top: 21%;
+    padding-bottom: 21%;
+    padding-left: 18%;
+    padding-right: 18%;
 }
 
 .midthird {
-    width: 1280px;
-    height: 720px;
-    margin: 0 auto;
     background-image: url(../img/middlet.jpg);
     background-size: 100%;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.midthird img {
+    padding-top: 12%;
+    padding-bottom: 12%;
+    padding-left: 0%;
+    padding-right: 0%;
+}
+
+
 .lowerthird {
-    width: 1280px;
-    height: 720px;
-    margin: 0 auto;
     background-image: url(../img/lowert.jpg);
     background-size: 100%;
+    background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.lowerthird a {
+    padding-top: 19%;
+    padding-bottom: 19%;
+    padding-left: 23%;
+    padding-right: 23%;
 }
 
 #rsvp {
-    width: 200px;
-    height: 180px;
+    width: 85px;
+    height: 75px;
     background-image: url(../img/RSVP.png);
-    background-size: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-size: 100%;    
     transition: all ease-in-out 500ms;
 }
 
