@@ -1,0 +1,148 @@
+/* Reset default margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the container takes full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: darkgray;
+}
+
+/* Container for all sections */
+.background-container {
+    display: grid;
+    grid-template-rows: repeat(3, 55vw); /* Three rows each taking up 55vw */
+}
+
+/* Background section styling */
+.background-section {
+    background-size: contain; /* Ensure the image is fully visible */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image repetition */
+    position: relative; /* Make the section a positioning context for absolute positioning */
+
+}
+
+/* Specific backgrounds for each section */
+.section-1 {
+    background-image: url(../img/topt.jpg);
+}
+
+.section-2 {
+    background-image: url(../img/middlet.jpg);
+}
+
+.section-3 {
+    background-image: url(../img/lowert.jpg);
+}
+
+/* Centered image styling */
+.centered-image {
+    position: absolute; /* Absolute positioning within the section */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the image's own size */
+    max-width: 80%; /* Adjust as needed to fit within the section */
+    max-height: 80%; /* Adjust as needed to fit within the section */
+}
+
+/* Centered image styling */
+.centered-image2 {
+    position: absolute; /* Absolute positioning within the section */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the image's own size */
+    max-width: 98%; /* Adjust as needed to fit within the section */
+    max-height: 98%; /* Adjust as needed to fit within the section */
+    z-index: 1;
+}
+
+.background-video {
+    position: absolute; /* Absolute positioning within the section */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the image's own size */
+    max-width: 99%; /* Adjust as needed to fit within the section */
+    max-height: 99%;
+    object-fit: cover; /* Make the video cover the section */
+    z-index: 2; /* Ensure the video is above the image */
+}
+
+@keyframes backgroundChange {
+    0% {
+        background-image: url(../img/RSVP.png); /* First image */
+    }
+    50% {
+        background-image: url(../img/RSVPopp.png); /* Second image */
+    }
+    100% {
+        background-image: url(../img/RSVP.png); /* Back to first image */
+    }
+}
+
+.rsvp {
+    display: block;
+    width: 18vw; /* Adjust as needed */
+    height: 17vh; /* Adjust as needed */
+    background-image: url(../img/RSVP.png); /* Path to your background image */
+    background-size: contain; /* Ensure the background image is fully visible */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image repetition */
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the anchor's own size */
+    text-decoration: none; /* Remove underline from the link */
+    animation: backgroundChange 3s infinite ease-in-out; /* Continuous animation */
+}
+
+/* Container to apply blur to */
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    backdrop-filter: blur(5px); /* Apply blur effect */
+    pointer-events: none; /* Prevent interaction with the blurred background */
+    transition: opacity 0.3s ease;
+    z-index: 999; /* Ensure it's below the popup */
+}
+
+/* Ensure popup is above everything */
+.welcome-popup {
+    font-family: 'Courier New', Courier, monospace;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: whitesmoke;
+    color: black;
+    padding: 5%;
+    text-wrap: nowrap;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000; /* Ensure it appears above the overlay */
+}
+
+.welcome-popup p {
+    margin-bottom: 20px;
+}
+
+.welcome-popup button {
+    background: whitesmoke;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    border:  1px solid grey;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+
+

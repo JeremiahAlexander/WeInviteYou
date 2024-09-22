@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeremy and Emrita Invites You</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="background-section section-1">
+            <img src="img/Date.png" class="centered-image" alt="Wedding Date">
+        </div>
+        <div class="background-section section-2">
+            
+            <img src="img/ejText.png" class="centered-image2" alt="Main Text Image">
+            
+            <video id="backgroundvideo" class="background-video" controls  loop muted>
+                <source src="vid/wedvid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+        </div>
+        <div class="background-section section-3">
+            <a target="_blank" href="https://withjoy.com/jeremy-and-emrita/rsvp" class="rsvp"></a>
+        </div>
+        
+      <!-- Welcome Popup -->
+    <div id="welcomePopup" class="welcome-popup">
+        <p>Welcome to our wedding invite!</p>
+        <button id="enterButton">Enter</button>
+    </div>
+
+    <!-- Blur Overlay -->
+    <div id="blurOverlay" class="blur-overlay"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('backgroundvideo');
+    var enterButton = document.getElementById('enterButton');
+    var welcomePopup = document.getElementById('welcomePopup');
+    var blurOverlay = document.getElementById('blurOverlay');
+
+    // Show the blur overlay initially
+    blurOverlay.style.opacity = '1';
+
+    enterButton.addEventListener('click', function() {
+        // Hide the popup
+        welcomePopup.style.display = 'none';
+
+        // Hide the blur overlay
+        blurOverlay.style.opacity = '0';
+
+        // Attempt to play the video
+        video.play().then(() => {
+            console.log('Video playback started');
+
+            // Unmute the video after a short delay
+            setTimeout(() => {
+                video.muted = false;
+                console.log('Video unmuted');
+            }, 1000); // Adjust delay as needed
+        }).catch(error => {
+            console.error('Autoplay was prevented:', error);
+        });
+    });
+});
+
+
+
+
+
+    </script>
+        
+
+    </div>
+</body>
+</html>
